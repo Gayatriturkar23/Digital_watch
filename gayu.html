@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title>Document</title>
+    <style>
+        #cs{
+            width: 450px;
+            height: 350px;
+            border: 2px solid black;
+            border-radius: 100%;
+            position: relative;
+            top: 60px;
+            box-shadow: 10px 10px 15px greenyellow, 0px -12px 15px green;
+            background-image: url(./Pupps.jpg) ;
+            background-size: 450px 350px;
+        }
+        .fon{
+            position: relative;
+            top: 60px;
+        }
+        #day{
+            color: yellow;
+            font-size: 32px;
+        }
+        #date{
+            color: orangered;
+            font-size: 32px;
+        }
+        #time{
+            color: mediumvioletred;
+            font-size: 26px;
+        }
+        #bs{
+            height: 550px;
+            width: 650px;
+            position: relative;
+            top: 50px;
+            background-image:linear-gradient(gold hotpink yellowgreen);
+            background-size: 650px 550px;
+            border-radius: 30%;
+           
+        }
+    </style>
+</head>
+<center>
+<body id="bs" onload="clock()" style="background-image: url(./pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg); background-repeat: no-repeat;">
+        <div id="cs">
+            <h1 class="fon" id="day"></h1>
+            <h3 class="fon" id="date"></h3>
+            <p class="fon" id="time"></p>
+        </div>
+        <script>
+            function clock() 
+            {
+                var dy=new Date()
+                var roju=dy.getDay()
+                switch (roju) 
+                {
+                    case 0:roju="SUNDAY";
+                    document.getElementById('bs').style.backgroundImage="url(./Pupps.jpg)"
+                     break;
+                case 1:roju="MONDAY";
+                document.getElementById('bs').style.backgroundImage="url(./batman.jpg)"
+                     break;
+                     case 2:roju="TUESDAY";
+                     break;
+                     case 3:roju="WEDNESDAY";
+                     document.getElementById('bs').style.backgroundImage="url./desktop-wallpaper-blur-background-for-editing-i-picsart-blur-nature-mobile.jpg"
+                     document.getElementById('bs').style.backgroundRepeat="no-repeat"
+                     break;
+                     case 4:roju="THURSDAY";
+                     document.getElementById('bs').style.backgroundImage="url(./pngtree-modern-double-color-futuristic-neon-background-image_351866.jpg)"
+                     document.getElementById('bs').style.backgroundRepeat="no-repeat"
+                     break;
+                     case 5:roju="FRIDAY";
+                     break;
+                     case 6:roju="SATURDAY";
+                     break;
+                }
+                document.getElementById('day').innerHTML=roju;
+
+                var dd=dy.getDate()
+                var mon=dy.getMonth()
+                var yyyy=dy.getFullYear()
+
+                switch(mon) 
+                {
+                    case 0:mon="JAN";
+                    break;
+                    case 1:mon="FEB";
+                    break;
+                    case 2:mon="MAR";
+                    break;
+                    case 3:mon="APR";
+                    break;
+                    case 4:mon="MAY";
+                    break;
+                    case 5:mon="JUNE";
+                    break;
+                    case 6:mon="JULY";
+                    break;
+                    case 7:mon="AUG";
+                    break;
+                    case 8:mon="SEPT";
+                    break;
+                    case 9:mon="OCT";
+                    break;
+                    case 10:mon="NOV";
+                    break;
+                    case 11:mon="DEC";
+                    break;
+                }
+                document.getElementById('date').innerHTML=dd+"/"+mon+"/"+yyyy
+                
+                var hh=dy.getHours()
+                var min=dy.getMinutes()
+                var sec=dy.getSeconds()
+
+                if (hh>=12)
+                {
+                 ampm="PM"   
+                }
+                else
+                {
+                    ampm="AM"
+                }
+                if (hh>12) 
+                {
+                    hh-=12
+                }
+              document.getElementById('time').innerHTML=hh+":"+min+":"+sec+""+ampm
+                setTimeout(function(){clock(), 1000});
+            }
+        </script>
+</body></center>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport", initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+ -->
